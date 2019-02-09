@@ -25,6 +25,80 @@
     "name": "Jeroen Somhorst",
     "email": "j.somhorst@gmail.com"
   },
+  "capabilities": {
+    "measure_uvindex_capability": {
+      "type": "number",
+      "title": {
+        "en": "UV-index",
+        "nl": "Zonkracht"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/cap_measure_uvindex.svg"
+    },
+    "measure_apparent_temperature_capability": {
+      "type": "number",
+      "title": {
+        "nl": "Gevoelstemperatuur",
+        "en": "Wind chill"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/cap_apparent_temperature.svg"
+    },
+    "measure_visibility_capability": {
+      "type": "number",
+      "title": {
+        "en": "Visibility",
+        "nl": "Zichtbaarheid"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/cap_measure_visibility.svg"
+    },
+    "measure_temperature_high_capability": {
+      "type": "number",
+      "title": {
+        "nl": "Hoogste dagtemperatuur",
+        "en": "Highest day temperature",
+        "de": "Highest temperature"
+      },
+      "icon": "/assets/cap_apparent_temperature.svg"
+    },
+    "measure_temperature_low_capability": {
+      "type": "number",
+      "title": {
+        "nl": "Laagste dagtemperatuur",
+        "en": "Lowest temperature",
+        "de": "Lowest temperature"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/cap_apparent_temperature.svg"
+    },
+    "measure_temperature_lowtime_capability": {
+      "type": "string",
+      "title": {
+        "nl": "Tijd laagste dagtemperatuur",
+        "en": "Time Lowest temperature",
+        "de": "Time Lowest temperature"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/cap_apparent_temperature.svg"
+    },
+    "measure_temperature_hightime_capability": {
+      "type": "string",
+      "title": {
+        "nl": "Tijd hoogste dagtemperatuur",
+        "en": "Time Highest temperature",
+        "de": "Time Highest temperature"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/cap_apparent_temperature.svg"
+    }
+  },
   "drivers": [
     {
       "id": "darksky_current_weather",
@@ -42,13 +116,13 @@
         "measure_wind_strength",
         "measure_wind_angle",
         "measure_gust_strength",
-        "cstm_measure_visibility",
-        "cstm_measure_uvindex",
-        "cstm_apparent_temperature",
-        "cstm_measure_temperature_high",
-        "cstm_measure_temperature_low",
-        "cstm_measure_temperature_lowtime",
-        "cstm_measure_temperature_hightime"
+        "measure_visibility_capability",
+        "measure_uvindex_capability",
+        "measure_apparent_temperature_capability",
+        "measure_temperature_high_capability",
+        "measure_temperature_low_capability",
+        "measure_temperature_lowtime_capability",
+        "measure_temperature_hightime_capability"
       ],
       "pair": [
         {
@@ -117,181 +191,167 @@
       }]
     }
   ],
-  "capabilities": {
-    "cstm_measure_uvindex": {
-      "type": "number",
-      "title": {
-        "en": "UV-index",
-        "nl": "Zonkracht",
-        "de": "UV-index"
-      },
-      "insights": true,
-      "insightsTitleTrue": {
-        "en": "UV-index",
-        "nl": "Zonkracht",
-        "de": "UV-index"
-      },
-      "getable": true,
-      "setable": false,
-      "icon": "/assets/cap_measure_uvindex.svg"
-    },
-    "cstm_apparent_temperature": {
-      "type": "number",
-      "title": {
-        "nl": "Gevoelstemperatuur",
-        "en": "Wind chill",
-        "de": "Windkühle"
-      },
-      "insights": true,
-      "insightsTitleTrue": {
-        "nl": "Gevoelstemperatuur",
-        "en": "Wind chill",
-        "de": "Windkühle"
-      },
-      "getable": true,
-      "setable": false,
-      "icon": "/assets/cap_apparent_temperature.svg"
-    },
-    "cstm_measure_visibility": {
-      "type": "number",
-      "title": {
-        "en": "Visibility",
-        "nl": "Zichtbaarheid",
-        "de": "Sichtweite"
-      },
-      "getable": true,
-      "setable": false,
-      "icon": "/assets/cap_measure_visibility.svg"
-    },
-    "cstm_measure_temperature_high": {
-      "type": "number",
-      "title": {
-        "nl": "Hoogste dagtemperatuur",
-        "en": "Highest day temperature",
-        "de": "Highest temperature"
-      },
-      "icon": "/assets/cap_apparent_temperature.svg"
-    },
-    "cstm_measure_temperature_low": {
-      "type": "number",
-      "title": {
-        "nl": "Laagste dagtemperatuur",
-        "en": "Lowest temperature",
-        "de": "Lowest temperature"
-      },
-      "getable": true,
-      "setable": false,
-      "icon": "/assets/cap_apparent_temperature.svg"
-    },
-    "cstm_measure_temperature_lowtime": {
-      "type": "string",
-      "title": {
-        "nl": "Tijd laagste dagtemperatuur",
-        "en": "Time Lowest temperature",
-        "de": "Time Lowest temperature"
-      },
-      "getable": true,
-      "setable": false,
-      "icon": "/assets/cap_apparent_temperature.svg"
-    },
-    "cstm_measure_temperature_hightime": {
-      "type": "string",
-      "title": {
-        "nl": "Tijd hoogste dagtemperatuur",
-        "en": "Time Highest temperature",
-        "de": "Time Highest temperature"
-      },
-      "getable": true,
-      "setable": false,
-      "icon": "/assets/cap_apparent_temperature.svg"
-    }
-  },
   "flow": {
-    "triggers": [{
-        "id": "cstm_measure_visibility_change",
-      "title": {
-        "en": "Visibility has changed",
-        "nl": "Zichtbaarheid is veranderd"
-      },"tokens": [
+    "triggers": [
+      {
+        "id": "measure_visibility_capability_changed",
+        "title": {
+          "en": "Visibility has changed",
+          "nl": "Zichtbaarheid is veranderd"
+        },
+        "hint": {
+          "en": "Triggers when the visibility changes.",
+          "nl": "Triggert zodra de zichtbaarheid veranderd."
+        },
+        "args": [
           {
-            "name": "visibility",
-            "type": "number",
-            "title": {
-              "en": "Visibility",
-              "nl": "Zichtbaarheid"
-            }
+            "name": "device",
+            "type": "device",
+            "placeholder": {
+              "en": "selecteer",
+              "nl": "selecteer"
+            },
+            "filter": "driver_id=darksky_current_weather"
           }
-        ]
-    },
-      {
-        "id": "cstm_measure_uvindex_change",
-        "title": {
-          "en": "UV Index has changed",
-          "nl": "Zonkracht is veranderd"
-        },"tokens": [
-        {
-          "name": "uvindex",
-          "type": "number",
-          "title": {
-            "en": "UV Index",
-            "nl": "Zonkracht"
-          }
-        }
-      ]
-      },
-      {
-        "id": "cstm_apparent_temperature_change",
-        "title": {
-          "en": "Apperent temperature has changed",
-          "nl": "Gevoelstemperatuur is veranderd"
-        },"tokens": [
-        {
-          "name": "temperature",
-          "type": "number",
-          "title": {
-            "en": "Temperature",
-            "nl": "Temperatuur"
-          }
-        }
-      ]
-      },
-      {
-        "id": "cstm_measure_temperature_high_change",
-        "title": {
-          "en": "Highest day temperature changed",
-          "nl": "Hoogste dagtemperatuur veranderd"
-        },
-        "tokens": [
-        {
-          "name": "temperature",
-          "type": "number",
-          "title": {
-            "en": "Temperature",
-            "nl": "Temperatuur"
-          }
-        }
-      ]
-      },
-      {
-        "id": "cstm_measure_temperature_low_change",
-        "title": {
-          "en": "Lowest day temperature changed",
-          "nl": "Laagste dagtemperatuur veranderd"
-        },
+        ],
         "tokens": [
           {
-            "name": "temperature",
+            "name": "value",
             "type": "number",
             "title": {
               "en": "Temperature",
               "nl": "Temperatuur"
             }
+          }]
+      },
+      {
+        "id": "measure_temperature_low_capability_changed",
+        "title": {
+          "en": "Lowest day temperature has changed",
+          "nl": "Laagste dagtemperatuur is veranderd"
+        },
+        "hint": {
+          "en": "Triggers when the lowest day temperature changes.",
+          "nl": "Triggert zodra de laagste dagtemperatuur veranderd."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "placeholder": {
+              "en": "selecteer",
+              "nl": "selecteer"
+            },
+            "filter": "driver_id=darksky_current_weather"
           }
-        ]
-      }],
-    "conditions": [],
-    "actions": []
+        ],
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            }
+          }]
+      },
+      {
+        "id": "measure_temperature_high_capability_changed",
+        "title": {
+          "en": "Highest day temperature has changed",
+          "nl": "Hoogste temperatuur is veranderd"
+        },
+        "hint": {
+          "en": "Triggers when the highest day temperature changes.",
+          "nl": "Triggert zodra de hoogste dagtemperatuur veranderd."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "placeholder": {
+              "en": "selecteer",
+              "nl": "selecteer"
+            },
+            "filter": "driver_id=darksky_current_weather"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            }
+          }]
+      },
+      {
+      "id": "measure_apparent_temperature_capability_changed",
+      "title": {
+        "en": "apparent temperature has changed",
+        "nl": "Gevoelstemperatuur is veranderd"
+      },
+      "hint": {
+        "en": "Triggers when the apparent temperature changes.",
+        "nl": "Triggert zodra de gevoelstemperatuur veranderd."
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "placeholder": {
+            "en": "selecteer",
+            "nl": "selecteer"
+          },
+          "filter": "driver_id=darksky_current_weather"
+        }
+      ],
+      "tokens": [
+        {
+          "name": "value",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "nl": "Temperatuur"
+          }
+        }]
+    },
+      {
+        "id": "measure_uvindex_capability_changed",
+        "title": {
+          "en": "UV index has changed",
+          "nl": "Zonkracht is veranderd"
+        },
+        "hint": {
+          "en": "Triggers when UV Index changes.",
+          "nl": "Triggert zodra de zonkracht veranderd."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "placeholder": {
+              "en": "selecteer",
+              "nl": "selecteer"
+            },
+            "filter": "driver_id=darksky_current_weather"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "uv index",
+              "nl": "Zonkracht"
+            }
+          }]
+      }
+    ]
   },
+
+
   "contributing": {
     "donate": {
       "paypal": {

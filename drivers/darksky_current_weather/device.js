@@ -1,21 +1,23 @@
 'use strict';
 
 const Homey = require('homey');
+const DEFAULT_API_KEY = "abcdefghijklmnopqrstuvwxyz";
+
 
 class DarkskyDevice extends Homey.Device{
 
     onInit(){
         Homey.app.log('Initialize device');
-    }
+        this.triggers = new Map();
 
-    onAdded(){
-        Homey.app.log('Adding new device!');
-    }
+        this.triggers.set("measure_visibility_capability",new Homey.FlowCardTriggerDevice('measure_visibility_capability_changed').register());
+        this.triggers.set("measure_uvindex_capability",new Homey.FlowCardTriggerDevice('measure_uvindex_capability_changed').register());
+        this.triggers.set("measure_apparent_temperature_capability",new Homey.FlowCardTriggerDevice('measure_apparent_temperature_capability_changed').register());
+        this.triggers.set("measure_temperature_high_capability",new Homey.FlowCardTriggerDevice('measure_temperature_high_capability_changed').register());
+        this.triggers.set("measure_temperature_low_capability",new Homey.FlowCardTriggerDevice('measure_temperature_low_capability_changed').register());
 
-    onDeleted(){
-        Homey.app.log('Removing device');
-    }
 
+    }
     async onSettings(oldSettingsObj, newSettingsObj, changedKeys){
         let driver = this.getDriver();
         let apiKey = newSettingsObj.apikey || "";
@@ -52,9 +54,45 @@ class DarkskyDevice extends Homey.Device{
         }
     }
 
+    setCapabilityValue(capability,value){
+        super.setCapabilityValue(capability,value);
+
+
+        switch(capability){
+            case 'measure_visibility_capability':
+            case 'measure_uvindex_capability':
+            case 'measure_apparent_temperature_capability':
+            case 'measure_temperature_high_capability':
+            case 'measure_temperature_low_capability':
+                console.log("Set capability value see what happened");
+                console.log(capability);
+                console.log(value);
+
+                let previousValue = this.getCapabilityValue(capability);
+
+                if(previousValue !== value) {
+                    let trigger = this.triggers.get(capability);
+                    if (trigger != null) {
+                        console.log('we can trigger the flow');
+                        trigger.trigger(this, {
+                            value: value
+                        }, {}).then(this.log).catch(this.error);
+                    }
+                }
+                break;
+
+        }
+
+    }
+
     hasValidSettings(){
         let settings = this.getSettings();
-        return (settings.hasOwnProperty('apikey') && settings.hasOwnProperty('latitude') && settings.hasOwnProperty('longtitude'));
+        if((settings.hasOwnProperty('apikey') && settings.apikey !== DEFAULT_API_KEY && (settings.apikey!== "" || settings.apikey === null))
+            && (settings.hasOwnProperty('latitude') && (settings.latitude!== 0 || settings.latitude === null))
+            && (settings.hasOwnProperty('longtitude') && (settings.longtitude!== 0 || settings.longtitude === null) )){
+            return true;
+        }
+        return false;
     }
 
     getApiKey(){

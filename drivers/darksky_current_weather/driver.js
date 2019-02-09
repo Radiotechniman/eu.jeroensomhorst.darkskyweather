@@ -6,11 +6,7 @@ const https = require("https");
 const HOUR_MILLISECONDS = 3600;
 const API_URL = "https://api.darksky.net/forecast/{0}/{1},{2}/?exclude=hourly,flags&units=si";
 
-const FLOW_CONDITION_MAXTEMP = "condition_maxtemp";
-const FLOW_CONDITION_MINTEMP = "condition_mintemp";
 
-const CAPABILITY_MAX_TEMPERATURE = "cstm_measure_temperature_high";
-const CAPABILITY_MIN_TEMPERATURE = "cstm_measure_temperature_low";
 
 const CRONTASK_RETRIEVEWEATHERINFO = "eu.jeroensomhorst.darkskyweather.cron";
 
@@ -20,6 +16,8 @@ class DarkskyDriver extends Homey.Driver{
 
         this.log('Initialize driver');
 
+        Homey.ManagerCron.unregisterTask(CRONTASK_RETRIEVEWEATHERINFO,null);
+
         Homey.ManagerCron.getTask(CRONTASK_RETRIEVEWEATHERINFO)
             .then(task => {
                 this.log("The task exists: " + CRONTASK_RETRIEVEWEATHERINFO);
@@ -28,7 +26,7 @@ class DarkskyDriver extends Homey.Driver{
             .catch(err => {
                 if (err.code === 404) {
                     this.log("The task has not been registered yet, registering task: " + CRONTASK_RETRIEVEWEATHERINFO);
-                    Homey.ManagerCron.registerTask(CRONTASK_RETRIEVEWEATHERINFO, "1 */1 * * * *", {})
+                    Homey.ManagerCron.registerTask(CRONTASK_RETRIEVEWEATHERINFO, "1 */2 * * * *", {})
                         .then(task => {
                             task.on('run', () => this.onCronRun());
                         })
@@ -41,11 +39,9 @@ class DarkskyDriver extends Homey.Driver{
             });
 
         this.retrievedDaily = -1;
-        this.registerTriggers();
-
     }
 
-    registerTriggers(){}
+
 
 
     async onCronRun(){
@@ -56,6 +52,10 @@ class DarkskyDriver extends Homey.Driver{
         });
     }
 
+    triggerFlow(capability,device,tokens,state){
+
+    }
+
     async handleDevice(device){
         if (!device.hasValidSettings()) {
             return;
@@ -64,6 +64,7 @@ class DarkskyDriver extends Homey.Driver{
             let result;
             result = await this.getWeather(device.getApiKey(), device.getLatitude(), device.getLongtitude());
             if(result!==null) {
+                this.log("Retrieved weather information");
                 let weatherInfo = JSON.parse(result.body);
                 let current = weatherInfo.currently;
                 let daily = weatherInfo.daily.data;
@@ -75,18 +76,18 @@ class DarkskyDriver extends Homey.Driver{
                 device.setCapabilityValue("measure_wind_strength", current.windSpeed);
                 device.setCapabilityValue("measure_wind_angle", current.windBearing);
                 device.setCapabilityValue("measure_gust_strength", current.windGust);
-                device.setCapabilityValue("cstm_measure_visibility", current.visibility);
-                device.setCapabilityValue("cstm_measure_uvindex", current.uvIndex);
-                device.setCapabilityValue("cstm_apparent_temperature", current.apparentTemperature);
+                device.setCapabilityValue("measure_visibility_capability", current.visibility);
+                device.setCapabilityValue("measure_uvindex_capability", current.uvIndex);
+                device.setCapabilityValue("measure_apparent_temperature_capability", current.apparentTemperature);
 
                 let currentEpoch = (new Date).getTime();
                 let timeDifference = this.retrievedDaily - currentEpoch;
 
                 if (timeDifference < 0 || timeDifference >= HOUR_MILLISECONDS) {
-                    device.setCapabilityValue("cstm_measure_temperature_high", daily[0].temperatureHigh);
-                    device.setCapabilityValue("cstm_measure_temperature_low", daily[0].temperatureLow);
-                    device.setCapabilityValue("cstm_measure_temperature_hightime", DarkskyDriver.formatDate(daily[0].temperatureHighTime));
-                    device.setCapabilityValue("cstm_measure_temperature_lowtime", DarkskyDriver.formatDate(daily[0].temperatureLowTime));
+                    device.setCapabilityValue("measure_temperature_high_capability", daily[0].temperatureHigh);
+                    device.setCapabilityValue("measure_temperature_low_capability", daily[0].temperatureLow);
+                    device.setCapabilityValue("measure_temperature_lowtime_capability", DarkskyDriver.formatDate(daily[0].temperatureHighTime));
+                    device.setCapabilityValue("measure_temperature_hightime_capability", DarkskyDriver.formatDate(daily[0].temperatureLowTime));
                     this.retrievedDaily = currentEpoch;
                 }
             }
@@ -137,27 +138,31 @@ class DarkskyDriver extends Homey.Driver{
         this.log(url);
 
         return new Promise((resolve,reject)=>{
-            https.get(url,(res)=>{
-                if(res.statusCode === 200) {
-                    let body = [];
-                    res.on('data', (chunk) => {
-                        this.log("retrieve data");
-                        body.push(chunk);
-                    });
-                    res.on('end', () => {
-                        this.log("Done retrieval of data");
-                        resolve({
-                            "body": Buffer.concat(body)
+            try{
+                https.get(url,(res)=>{
+                    if(res.statusCode === 200) {
+                        let body = [];
+                        res.on('data', (chunk) => {
+                            this.log("retrieve data");
+                            body.push(chunk);
                         });
-                    });
-                }else{
+                        res.on('end', () => {
+                            this.log("Done retrieval of data");
+                            resolve({
+                                "body": Buffer.concat(body)
+                            });
+                        });
+                    }else{
+                        reject(null);
+                    }
+                }).on('error',(err)=>{
+                    this.log("Error while connecting to domoticz");
+                    this.log(err);
                     reject(null);
-                }
-            }).on('error',(err)=>{
-                this.log("Error while connecting to domoticz");
-                this.log(err);
-                reject(err);
-            });
+                });
+            }catch(e){
+                reject(null);
+            }
 
 
         });
