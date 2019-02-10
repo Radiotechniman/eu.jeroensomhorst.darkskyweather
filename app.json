@@ -185,7 +185,11 @@
             "value": "Powered by Dark Sky "
           }
         ]
-      }]
+      }],
+      "images": {
+        "large": "drivers/darksky_current_weather/assets/images/large.png",
+        "small": "drivers/darksky_current_weather/assets/images/small.png"
+      }
     }
   ],
   "flow": {
@@ -347,8 +351,6 @@
       }
     ]
   },
-
-
   "contributing": {
     "donate": {
       "paypal": {
