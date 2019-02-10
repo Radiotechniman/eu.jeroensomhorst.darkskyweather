@@ -16,8 +16,6 @@ class DarkskyDriver extends Homey.Driver{
 
         this.log('Initialize driver');
 
-        //Homey.ManagerCron.unregisterTask(CRONTASK_RETRIEVEWEATHERINFO,null);
-
         Homey.ManagerCron.getTask(CRONTASK_RETRIEVEWEATHERINFO)
             .then(task => {
                 this.log("The task exists: " + CRONTASK_RETRIEVEWEATHERINFO);
