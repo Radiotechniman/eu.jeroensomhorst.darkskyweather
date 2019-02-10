@@ -1,4 +1,8 @@
 {
   "settings_apikey_required":  "Een API sleutel is verplicht.",
-  "settings_apikey_invalid": "De opgegeven API sleutel is incorrect"
+  "settings_apikey_invalid": "De opgegeven API sleutel is incorrect",
+  "api_key_label": "Api sleutel:",
+  "longtitude": "Lengtegraad",
+  "latitude": "Breedtegraad"
+
 }

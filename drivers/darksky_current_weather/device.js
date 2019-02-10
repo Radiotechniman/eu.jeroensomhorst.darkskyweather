@@ -64,16 +64,11 @@ class DarkskyDevice extends Homey.Device{
             case 'measure_apparent_temperature_capability':
             case 'measure_temperature_high_capability':
             case 'measure_temperature_low_capability':
-                console.log("Set capability value see what happened");
-                console.log(capability);
-                console.log(value);
-
                 let previousValue = this.getCapabilityValue(capability);
 
                 if(previousValue !== value) {
                     let trigger = this.triggers.get(capability);
                     if (trigger != null) {
-                        console.log('we can trigger the flow');
                         trigger.trigger(this, {
                             value: value
                         }, {}).then(this.log).catch(this.error);

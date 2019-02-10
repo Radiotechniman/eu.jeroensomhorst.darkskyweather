@@ -52,10 +52,6 @@ class DarkskyDriver extends Homey.Driver{
         });
     }
 
-    triggerFlow(capability,device,tokens,state){
-
-    }
-
     async handleDevice(device){
         if (!device.hasValidSettings()) {
             return;
@@ -64,7 +60,6 @@ class DarkskyDriver extends Homey.Driver{
             let result;
             result = await this.getWeather(device.getApiKey(), device.getLatitude(), device.getLongtitude());
             if(result!==null) {
-                this.log("Retrieved weather information");
                 let weatherInfo = JSON.parse(result.body);
                 let current = weatherInfo.currently;
                 let daily = weatherInfo.daily.data;

@@ -16,21 +16,18 @@
     }
 </style>
 <p class="form-group">
-    <label for="apikey">Enter the Darksky API Key:
-    </label>
+    <label for="apikey" id="lbl_apikey">lbl_apikey</label>
     <span class="input-wrap">
     <input type="text" id="apikey" placeholder="abcdefghikjlmnopqrstuvwxyz" value="" />
   </span>
     <br/>
     <br/>
-    <label for="longtitude">Longtitude
-    </label>
+    <label for="longtitude" id="lbl_longtitude">lbl_longtitude</label>
     <span class="input-wrap">
     <input type="number" id="longtitude" placeholder="0" value="" />
     </span>
     <br/>
-    <label for="latitude">Latitude
-    </label>
+    <label for="latitude" id="lbl_latitude">lbl_latitude</label>
     <span class="input-wrap">
     <input type="number" id="latitude" placeholder="0" value="" />
     </span>
@@ -49,6 +46,16 @@
 
 <script type="text/javascript">
     $(function() {
+        $().ready(()=>{
+          $("#lbl_apikey").text(Homey.__("api_key_label",null));
+          $("#lbl_longtitude").text(Homey.__("longtitude",null));
+          $("#lbl_latitude").text(Homey.__("latitude",null));
+          $("#latitude").value(Homey.ManagerGeolocation.getLatitude());
+          $("#longtitude").value(Homey.ManagerGeolocation.getLongtitude());
+          /** set latitude , longtitude if known **/
+
+
+        });
         $('#validate').click(function() {
             function guid() {
                 function s4() {
@@ -77,7 +84,7 @@
             // APIkey is required
             if (apikey === "") {
                 // Give error, required values
-                Homey.alert(__('pair.start.required'), 'error');
+                Homey.alert(__('settings_apikey_required'), 'error');
                 return;
             }
             $('.solar-status').removeClass('visible');

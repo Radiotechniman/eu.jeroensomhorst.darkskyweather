@@ -1,4 +1,7 @@
 {
-  "settings_apikey_required":  "An API Key is required",
-  "settings_apikey_invalid": "The provided api key seems to be invalid"
+  "settings_apikey_required":  "Ein API-Schlüssel ist erforderlich",
+  "settings_apikey_invalid": "Der bereitgestellte API-Schlüssel scheint ungültig zu sein",
+  "api_key_label": "API-Schlüssel",
+  "longtitude": "Längengrad",
+  "latitude": "Breitengrad"
 }
