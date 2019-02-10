@@ -108,15 +108,16 @@ class DarkskyDriver extends Homey.Driver{
     }
 
     async onPairListDevices(data,cb){
-        this.log("On Pair list devices");
+        /*this.log("On Pair list devices");
         let devices = [{
             "data": {"id": this._guid()}
         }];
 
         cb(null,devices);
+        */
     }
 
-    _guid() {
+    /*_guid() {
         function s4() {
             return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
         }
@@ -125,7 +126,7 @@ class DarkskyDriver extends Homey.Driver{
 
     validateApiKey(key,lat,long){
         return this.getWeather(key,lat,long);
-    }
+    }*/
 
     async getWeather(key,lat,long){
         this.log("Get weather info");
