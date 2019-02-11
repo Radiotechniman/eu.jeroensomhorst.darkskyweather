@@ -1,11 +1,10 @@
 # Dark Sky Weather
 
-Get weather info using Dark Sky. With this app you can get the current weather
-on a certain location using the Dark Sky (https://darksky.net/) api. For every device / location
-you add you need an api key. 
+Get weather info using Dark Sky. The current implementation retrieves the current weather information. To get it working
+create a new device and specify the api key and the coordinates you want to use. The devices are updated every two minutes just to be sure
+to not overload the server / key usage.
 
-The app currently retrieves the data every two minutes. This is because that would be a maximum of 
-720 api calls per day. This is withing the limit before Dark sky starts to charge. This app currently 
-only gives the the current weather
 
-1.0.0. Initial release
+# Changelog
+
+0.0.1 First release to see if things work as they should
