@@ -107,7 +107,7 @@ class DarkskyDriver extends Homey.Driver{
     async getWeather(key,lat,long){
         let url = format(API_URL,key,lat,long);
         this.log(url);
-
+ 
         return new Promise((resolve,reject)=>{
             try{
                 https.get(url,(res)=>{
