@@ -100,34 +100,7 @@ class DarkskyDriver extends Homey.Driver{
         return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
     }
 
-    async onPairListDevices(data,cb){
-        /*this.log("On Pair list devices");
-        let devices = [{
-            "data": {"id": this._guid()}
-        }];
-
-        cb(null,devices);
-        */
-    }
-
-    /*_guid() {
-        function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-        }
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
-    }
-
-    validateApiKey(key,lat,long){
-        return this.getWeather(key,lat,long);
-    }*/
-
     async getWeather(key,lat,long){
-        this.log("Get weather info");
-        this.log("key: "+ key);
-        this.log("lat: "+ lat);
-        this.log("long: "+ long);
-
-
         let url = format(API_URL,key,lat,long);
         this.log(url);
 
@@ -150,7 +123,6 @@ class DarkskyDriver extends Homey.Driver{
                         reject(null);
                     }
                 }).on('error',(err)=>{
-                    this.log("Error while connecting to domoticz");
                     this.log(err);
                     reject(null);
                 });

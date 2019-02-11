@@ -106,4 +106,4 @@ class DarkskyDevice extends Homey.Device{
 
 }
 
-module.exports = DarkskyDevice
+module.exports = DarkskyDevice;
