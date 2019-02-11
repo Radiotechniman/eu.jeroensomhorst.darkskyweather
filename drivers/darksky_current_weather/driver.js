@@ -100,6 +100,10 @@ class DarkskyDriver extends Homey.Driver{
         return hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
     }
 
+    validateApiKey(key,lat,long){
+        return this.getWeather(key,lat,long);
+    }
+
     async getWeather(key,lat,long){
         let url = format(API_URL,key,lat,long);
         this.log(url);
