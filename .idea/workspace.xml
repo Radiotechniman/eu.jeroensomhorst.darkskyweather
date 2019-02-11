@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eea334c8-d648-4bbf-a99e-b2183331b6d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,24 +16,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.json">
+        <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+            <state relative-caret-position="186">
+              <caret line="124" column="28" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/device.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
               <folding>
-                <element signature="n#!!block;n#name#0;n#!!top" />
-                <element signature="e#388#407#0" />
-                <element signature="n#!!block;n#author#0;n#!!top" />
-                <element signature="n#!!block;n#capabilities#0;n#!!top" />
-                <element signature="n#!!block;n#measure_uvindex_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-                <element signature="n#!!block;n#measure_visibility_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-                <element signature="n#!!block;n#measure_temperature_low_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-                <element signature="n#!!block;n#measure_temperature_lowtime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-                <element signature="n#!!block;n#measure_temperature_hightime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-                <element signature="e#2963#3502#0" />
-                <element signature="e#3518#3578#0" />
-                <element signature="e#3598#5034#0" />
-                <element signature="n#!!block;n#contributing#0;n#!!top" />
+                <element signature="n#!!block;n#onSettings#0;n#DarkskyDevice#0" />
               </folding>
             </state>
           </provider>
@@ -41,11 +40,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>return</find>
-      <find>guid</find>
-      <find>hasva</find>
-      <find>hasValidSettings</find>
-      <find>var</find>
       <find>cronrun</find>
       <find>registerConditions</find>
       <find>cstm_measure_temperature_high</find>
@@ -71,6 +65,11 @@
       <find>permis</find>
       <find>name</find>
       <find>contriu</find>
+      <find>getWeather</find>
+      <find>domoti</find>
+      <find>domo</find>
+      <find>error wh</find>
+      <find>domoticz</find>
     </findStrings>
     <replaceStrings>
       <replace>currently</replace>
@@ -78,6 +77,9 @@
       <replace>this.log</replace>
       <replace>let</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\jsomh\PhpstormProjects\eu.jeroensomhorst.darkskyweather</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -86,23 +88,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/node_modules/string-format/index.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/drivers/darksky_current_weather/pair/darsky_pair" />
-        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" />
         <option value="$PROJECT_DIR$/locales/nl.json" />
         <option value="$PROJECT_DIR$/locales/en.json" />
         <option value="$PROJECT_DIR$/locales/de.json" />
-        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" />
         <option value="$PROJECT_DIR$/drivers/darksky_current_weather/pair/darksky_pair.html" />
         <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" />
+        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="199" />
-    <option name="y" value="92" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="140" />
+    <option name="y" value="144" />
     <option name="width" value="1550" />
     <option name="height" value="1047" />
   </component>
@@ -130,6 +132,22 @@
               <item name="eu.jeroensomhorst.darkskyweather" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eu.jeroensomhorst.darkskyweather" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eu.jeroensomhorst.darkskyweather" type="462c0819:PsiDirectoryNode" />
+              <item name="drivers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eu.jeroensomhorst.darkskyweather" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eu.jeroensomhorst.darkskyweather" type="462c0819:PsiDirectoryNode" />
+              <item name="drivers" type="462c0819:PsiDirectoryNode" />
+              <item name="darksky_current_weather" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eu.jeroensomhorst.darkskyweather" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eu.jeroensomhorst.darkskyweather" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -188,7 +206,9 @@
       <workItem from="1549713334235" duration="7093000" />
       <workItem from="1549721168778" duration="7597000" />
       <workItem from="1549788298039" duration="5755000" />
-      <workItem from="1549827716410" duration="2360000" />
+      <workItem from="1549827716410" duration="2383000" />
+      <workItem from="1549830548734" duration="251000" />
+      <workItem from="1549831022513" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="lots of changes...">
       <created>1549696504442</created>
@@ -232,11 +252,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549828156096</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="made the app publish ready.">
+      <created>1549830102152</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1549830102152</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64643000" />
+    <option name="totallyTimeSpent" value="64968000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -248,10 +275,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="594" y="0" width="1550" height="1047" extended-state="0" />
+    <frame x="140" y="144" width="1550" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23154363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23758389" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -281,7 +308,8 @@
     <MESSAGE value="Changed the way the device get's paired.&#10;Fixed some bugs" />
     <MESSAGE value="Fixed a bug that would cause the scheduler not to run ( devices not updating)" />
     <MESSAGE value="Fixed a bug that would cause the homey app to crash due to an empty name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug that would cause the homey app to crash due to an empty name" />
+    <MESSAGE value="made the app publish ready." />
+    <option name="LAST_COMMIT_MESSAGE" value="made the app publish ready." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/cap_measure_uvindex.svg">
@@ -290,16 +318,6 @@
     <entry file="file://$PROJECT_DIR$/assets/Thermometer.svg" />
     <entry file="file://$PROJECT_DIR$/assets/cap_measure_visibility.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -322,16 +340,6 @@
     <entry file="file://$PROJECT_DIR$/assets/cap_apparent_temperature.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/device.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!block;n#onSettings#0;n#DarkskyDevice#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/locales/nl.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -353,13 +361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/pair/darksky_pair.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -378,7 +379,7 @@
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
           <folding>
             <element signature="n#!!block;n#name#0;n#!!top" />
             <element signature="e#388#407#0" />
@@ -394,6 +395,33 @@
             <element signature="e#3598#5034#0" />
             <element signature="n#!!block;n#contributing#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="170">
+            <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!block;n#onSettings#0;n#DarkskyDevice#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="124" column="28" selection-start-line="124" selection-start-column="28" selection-end-line="124" selection-end-column="28" />
         </state>
       </provider>
     </entry>
