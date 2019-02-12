@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eea334c8-d648-4bbf-a99e-b2183331b6d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,23 +15,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+            <state relative-caret-position="34">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding>
+                <element signature="n#!!block;n#name#0;n#!!top" />
+                <element signature="e#388#407#0" />
+                <element signature="n#!!block;n#author#0;n#!!top" />
+                <element signature="n#!!block;n#measure_uvindex_capability#0;n#!!block;n#capabilities#0;n#!!top" />
+                <element signature="n#!!block;n#measure_temperature_lowtime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
+                <element signature="n#!!block;n#measure_temperature_hightime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
+                <element signature="e#3518#3578#0" />
+                <element signature="e#3598#5034#0" />
+                <element signature="e#6752#6943#0" />
+                <element signature="n#!!block;n#contributing#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/device.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
-              <folding>
-                <element signature="n#!!block;n#setCapabilityValue#0;n#DarkskyDevice#0" />
-              </folding>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="187">
+                <caret line="11" column="121" selection-start-line="11" selection-start-column="121" selection-end-line="11" selection-end-column="121" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -38,7 +52,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>abcd</find>
       <find>cstm</find>
       <find>cstm_</find>
       <find>app</find>
@@ -68,6 +81,7 @@
       <find>validateapi</find>
       <find>validate</find>
       <find>dars</find>
+      <find>measure_temperature_low_capability</find>
     </findStrings>
     <replaceStrings>
       <replace>currently</replace>
@@ -138,10 +152,10 @@
         <option value="$PROJECT_DIR$/locales/en.json" />
         <option value="$PROJECT_DIR$/locales/de.json" />
         <option value="$PROJECT_DIR$/drivers/darksky_current_weather/pair/darksky_pair.html" />
-        <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" />
+        <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -254,7 +268,8 @@
       <workItem from="1549901874868" duration="1417000" />
       <workItem from="1549903616188" duration="160000" />
       <workItem from="1549904119474" duration="109000" />
-      <workItem from="1549911841022" duration="177000" />
+      <workItem from="1549911841022" duration="958000" />
+      <workItem from="1549988832917" duration="589000" />
     </task>
     <task id="LOCAL-00001" summary="lots of changes...">
       <created>1549696504442</created>
@@ -326,11 +341,25 @@
       <option name="project" value="LOCAL" />
       <updated>1549903260901</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="made the app publish ready.">
+      <created>1549912032174</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1549912032175</updated>
+    </task>
+    <task id="LOCAL-00012" summary="made the app publish ready.">
+      <created>1549912319822</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1549912319822</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66831000" />
+    <option name="totallyTimeSpent" value="68201000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -345,7 +374,7 @@
     <frame x="378" y="0" width="1549" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25117528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25453323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -358,7 +387,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.404814" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.404814" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -436,16 +465,6 @@
     <entry file="file://$PROJECT_DIR$/assets/icon.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" selection-start-line="4" selection-end-line="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/locales/en.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -453,30 +472,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
+    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="121" column="32" selection-start-line="121" selection-start-column="32" selection-end-line="121" selection-end-column="32" />
-          <folding>
-            <element signature="n#!!block;n#name#0;n#!!top" />
-            <element signature="e#388#407#0" />
-            <element signature="n#!!block;n#author#0;n#!!top" />
-            <element signature="n#!!block;n#capabilities#0;n#!!top" />
-            <element signature="n#!!block;n#measure_uvindex_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-            <element signature="n#!!block;n#measure_visibility_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-            <element signature="n#!!block;n#measure_temperature_low_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-            <element signature="n#!!block;n#measure_temperature_lowtime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-            <element signature="n#!!block;n#measure_temperature_hightime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
-            <element signature="e#3518#3578#0" />
-            <element signature="e#3598#5034#0" />
-            <element signature="n#!!block;n#contributing#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="190">
+          <caret line="83" column="47" lean-forward="true" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/device.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
+        <state relative-caret-position="833">
           <caret line="49" column="40" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
           <folding>
             <element signature="n#!!block;n#setCapabilityValue#0;n#DarkskyDevice#0" />
@@ -484,10 +489,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
+    <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!block;n#name#0;n#!!top" />
+            <element signature="e#388#407#0" />
+            <element signature="n#!!block;n#author#0;n#!!top" />
+            <element signature="n#!!block;n#measure_uvindex_capability#0;n#!!block;n#capabilities#0;n#!!top" />
+            <element signature="n#!!block;n#measure_temperature_lowtime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
+            <element signature="n#!!block;n#measure_temperature_hightime_capability#0;n#!!block;n#capabilities#0;n#!!top" />
+            <element signature="e#3518#3578#0" />
+            <element signature="e#3598#5034#0" />
+            <element signature="e#6752#6943#0" />
+            <element signature="n#!!block;n#contributing#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="187">
+            <caret line="11" column="121" selection-start-line="11" selection-start-column="121" selection-end-line="11" selection-end-column="121" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

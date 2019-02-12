@@ -79,8 +79,8 @@ class DarkskyDriver extends Homey.Driver{
                 if (timeDifference < 0 || timeDifference >= HOUR_MILLISECONDS) {
                     device.setCapabilityValue("measure_temperature_high_capability", daily[0].temperatureHigh);
                     device.setCapabilityValue("measure_temperature_low_capability", daily[0].temperatureLow);
-                    device.setCapabilityValue("measure_temperature_lowtime_capability", DarkskyDriver.formatDate(daily[0].temperatureHighTime));
-                    device.setCapabilityValue("measure_temperature_hightime_capability", DarkskyDriver.formatDate(daily[0].temperatureLowTime));
+                    device.setCapabilityValue("measure_temperature_lowtime_capability", DarkskyDriver.formatDate(daily[0].temperatureLowTime));
+                    device.setCapabilityValue("measure_temperature_hightime_capability", DarkskyDriver.formatDate(daily[0].temperatureHighTime));
                     this.retrievedDaily = currentEpoch;
                 }
             }
@@ -107,7 +107,7 @@ class DarkskyDriver extends Homey.Driver{
     async getWeather(key,lat,long){
         let url = format(API_URL,key,lat,long);
         this.log(url);
- 
+
         return new Promise((resolve,reject)=>{
             try{
                 https.get(url,(res)=>{
