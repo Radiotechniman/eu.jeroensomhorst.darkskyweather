@@ -15,7 +15,7 @@ class DarkskyDevice extends Homey.Device{
         this.triggers.set("measure_apparent_temperature_capability",new Homey.FlowCardTriggerDevice('measure_apparent_temperature_capability_changed').register());
         this.triggers.set("measure_temperature_high_capability",new Homey.FlowCardTriggerDevice('measure_temperature_high_capability_changed').register());
         this.triggers.set("measure_temperature_low_capability",new Homey.FlowCardTriggerDevice('measure_temperature_low_capability_changed').register());
-
+        this.triggers.set("measure_cloudcover_capability_changed",new Homey.FlowCardTriggerDevice('measure_cloudcover_capability_changed').register());
 
     }
     async onSettings(oldSettingsObj, newSettingsObj, changedKeys){
@@ -64,6 +64,7 @@ class DarkskyDevice extends Homey.Device{
             case 'measure_apparent_temperature_capability':
             case 'measure_temperature_high_capability':
             case 'measure_temperature_low_capability':
+            case 'measure_cloudcover_capability_changed':
                 let previousValue = this.getCapabilityValue(capability);
 
                 if(previousValue !== value) {

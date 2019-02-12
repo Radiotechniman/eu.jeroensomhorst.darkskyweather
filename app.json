@@ -120,6 +120,22 @@
       "getable": true,
       "setable": false,
       "icon": "/assets/cap_apparent_temperature.svg"
+    },
+    "measure_cloudcover_capability": {
+      "type": "number",
+      "title": {
+        "en": "Cloud coverage",
+        "nl": "Bewolking",
+        "de": "Wolkenbedeckung"
+      },
+      "getable": true,
+      "setable": false,
+      "icon": "/assets/cap_clouds.svg",
+      "units": {
+        "en": "%",
+        "nl": "%",
+        "de": "%"
+      }
     }
   },
   "drivers": [
@@ -145,7 +161,8 @@
         "measure_temperature_high_capability",
         "measure_temperature_low_capability",
         "measure_temperature_lowtime_capability",
-        "measure_temperature_hightime_capability"
+        "measure_temperature_hightime_capability",
+        "measure_cloudcover_capability"
       ],
       "pair": [
         {
@@ -241,6 +258,37 @@
             "title": {
               "en": "Temperature",
               "nl": "Temperatuur"
+            }
+          }]
+      },
+      {
+        "id": "measure_cloudcover_capability_changed",
+        "title": {
+          "en": "Cloudcover has changed",
+          "nl": "Bewolking is veranderd"
+        },
+        "hint": {
+          "en": "Triggers when the cloudcoverage has changed",
+          "nl": "Triggert zodra de bewolking veranderd."
+        },
+        "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "placeholder": {
+            "en": "selecteer",
+            "nl": "selecteer"
+          },
+          "filter": "driver_id=darksky_current_weather"
+        }
+      ],
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Cloud coverage",
+              "nl": "Cloud coverage"
             }
           }]
       },
