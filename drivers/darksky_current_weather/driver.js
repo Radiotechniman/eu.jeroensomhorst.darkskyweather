@@ -63,7 +63,7 @@ class DarkskyDriver extends Homey.Driver{
                 let daily = weatherInfo.daily.data;
 
                 device.setCapabilityValue("measure_temperature", current.temperature);
-                device.setCapabilityValue("measure_humidity", Math.round(current.humidity * 100,2));
+                device.setCapabilityValue("measure_humidity", Math.round(current.humidity * 100));
                 device.setCapabilityValue("measure_pressure", current.pressure);
                 device.setCapabilityValue("measure_rain", current.precipIntensity);
                 device.setCapabilityValue("measure_wind_strength", current.windSpeed);
@@ -72,7 +72,7 @@ class DarkskyDriver extends Homey.Driver{
                 device.setCapabilityValue("measure_visibility_capability", current.visibility);
                 device.setCapabilityValue("measure_uvindex_capability", current.uvIndex);
                 device.setCapabilityValue("measure_apparent_temperature_capability", current.apparentTemperature);
-                device.setCapabilityValue("measure_cloudcover_capability",Math.round(current.cloudCover*100,2));
+                device.setCapabilityValue("measure_cloudcover_capability",Math.round(current.cloudCover*100));
                 let currentEpoch = (new Date).getTime();
                 let timeDifference = this.retrievedDaily - currentEpoch;
 
