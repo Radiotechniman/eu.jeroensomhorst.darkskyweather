@@ -1,6 +1,6 @@
 {
   "id": "eu.jeroensomhorst.darkskyweather",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -130,12 +130,13 @@
       },
       "getable": true,
       "setable": false,
-      "icon": "/assets/cap_clouds.svg",
+
       "units": {
         "en": "%",
         "nl": "%",
         "de": "%"
-      }
+      },
+      "icon": "/assets/cap_clouds.svg"
     }
   },
   "drivers": [
