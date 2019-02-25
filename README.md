@@ -9,6 +9,7 @@ to not overload the server / key usage.
 
 # Changelog
 
-0.0.3 Fixed a minor rounding error in various capabilities (humidity , cloud cover)
-0.0.2 Fixed a bug that caused the highest and lowest temperature times to be swapped. Added units to various capabilities
-0.0.1 First release to see if things work as they should
+* 0.0.4 Fixed paypal link
+* 0.0.3 Fixed a minor rounding error in various capabilities (humidity , cloud cover)
+* 0.0.2 Fixed a bug that caused the highest and lowest temperature times to be swapped. Added units to various capabilities
+* 0.0.1 First release to see if things work as they should
