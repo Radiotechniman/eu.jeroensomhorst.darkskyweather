@@ -61,17 +61,18 @@ class DarkskyDevice extends Homey.Device{
 
         Homey.app.log("Trigger the change");
         Homey.app.log(capability);
+        if(previousValue != value) {
+            if (this.triggers.has(capability)) {
+                Homey.app.log("Found a trigger");
+                let trigger = this.triggers.get(capability);
 
-        if(this.triggers.has(capability)){
-            Homey.app.log("Found a trigger");
-            let trigger = this.triggers.get(capability);
+                trigger.trigger(this, {value: value})
+                    .catch(this.error)
+                    .then(this.log)
 
-            trigger.trigger( this,{value:value })
-                .catch( this.error )
-                .then( this.log )
-
-        }else{
-            Homey.app.log("Could not find trigger for capability");
+            } else {
+                Homey.app.log("Could not find trigger for capability");
+            }
         }
     }
 
