@@ -15,7 +15,7 @@ class DarkskyDevice extends Homey.Device{
         this.triggers.set("measure_apparent_temperature_capability",new Homey.FlowCardTriggerDevice('measure_apparent_temperature_capability_changed').register());
         this.triggers.set("measure_temperature_high_capability",new Homey.FlowCardTriggerDevice('measure_temperature_high_capability_changed').register());
         this.triggers.set("measure_temperature_low_capability",new Homey.FlowCardTriggerDevice('measure_temperature_low_capability_changed').register());
-        this.triggers.set("measure_cloudcover_capability_changed",new Homey.FlowCardTriggerDevice('measure_cloudcover_capability_changed').register());
+        this.triggers.set("measure_cloudcover_capability",new Homey.FlowCardTriggerDevice('measure_cloudcover_capability_changed').register());
 
     }
     async onSettings(oldSettingsObj, newSettingsObj, changedKeys){
@@ -55,30 +55,24 @@ class DarkskyDevice extends Homey.Device{
     }
 
     setCapabilityValue(capability,value){
+        Homey.app.log("Set capability value");
+        let previousValue = this.getCapabilityValue(capability);
         super.setCapabilityValue(capability,value);
 
+        Homey.app.log("Trigger the change");
+        Homey.app.log(capability);
 
-        switch(capability){
-            case 'measure_visibility_capability':
-            case 'measure_uvindex_capability':
-            case 'measure_apparent_temperature_capability':
-            case 'measure_temperature_high_capability':
-            case 'measure_temperature_low_capability':
-            case 'measure_cloudcover_capability_changed':
-                let previousValue = this.getCapabilityValue(capability);
+        if(this.triggers.has(capability)){
+            Homey.app.log("Found a trigger");
+            let trigger = this.triggers.get(capability);
 
-                if(previousValue !== value) {
-                    let trigger = this.triggers.get(capability);
-                    if (trigger != null) {
-                        trigger.trigger(this, {
-                            value: value
-                        }, {}).then(this.log).catch(this.error);
-                    }
-                }
-                break;
+            trigger.trigger( this,{value:value })
+                .catch( this.error )
+                .then( this.log )
 
+        }else{
+            Homey.app.log("Could not find trigger for capability");
         }
-
     }
 
     hasValidSettings(){
