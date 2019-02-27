@@ -1,6 +1,6 @@
 {
   "id": "eu.jeroensomhorst.darkskyweather",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -70,9 +70,9 @@
     "measure_temperature_high_capability": {
       "type": "number",
       "title": {
-        "nl": "Hoogste dagtemperatuur",
-        "en": "Highest day temperature",
-        "de": "Highest temperature"
+        "nl": "Verwachte hoogste dagtemperatuur",
+        "en": "Highest expected temperature",
+        "de": "Erwartete Heu-Temperatur"
       },
       "units": {
         "en": "°C",
@@ -86,9 +86,9 @@
     "measure_temperature_low_capability": {
       "type": "number",
       "title": {
-        "nl": "Laagste dagtemperatuur",
-        "en": "Lowest temperature",
-        "de": "Lowest temperature"
+        "nl": "Verwachte laagste dagtemperatuur",
+        "en": "Lowest expected temperature",
+        "de": "Erwartete niedrigste Temperatur"
       },
       "units": {
         "en": "°C",
@@ -161,8 +161,8 @@
         "measure_apparent_temperature_capability",
         "measure_temperature_high_capability",
         "measure_temperature_low_capability",
-        "measure_temperature_lowtime_capability",
         "measure_temperature_hightime_capability",
+        "measure_temperature_lowtime_capability",
         "measure_cloudcover_capability"
       ],
       "pair": [
