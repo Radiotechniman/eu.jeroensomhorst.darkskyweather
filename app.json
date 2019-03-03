@@ -1,6 +1,6 @@
 {
   "id": "eu.jeroensomhorst.darkskyweather",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -11,7 +11,7 @@
   "description": {
     "en": "Get weather info using Dark Sky",
     "nl": "Get weather info using Dark Sky",
-    "de": "Get weather info using Dark Sky"
+    "de": "Erhalten Sie Wetterinformationen mit Dark Sky"
   },
   "category": [
     "climate"
@@ -56,7 +56,8 @@
       "type": "number",
       "title": {
         "en": "Visibility",
-        "nl": "Zichtbaarheid"
+        "nl": "Zichtbaarheid",
+        "de": "Sichtweite"
       },
       "units": {
         "en": "km",
@@ -103,8 +104,8 @@
       "type": "string",
       "title": {
         "nl": "Tijd laagste dagtemperatuur",
-        "en": "Time Lowest temperature",
-        "de": "Time Lowest temperature"
+        "en": "Time Lowest daytime temperature",
+        "de": "Zeit Niedrigste Tagestemperatur"
       },
       "getable": true,
       "setable": false,
@@ -115,7 +116,7 @@
       "title": {
         "nl": "Tijd hoogste dagtemperatuur",
         "en": "Time Highest temperature",
-        "de": "Time Highest temperature"
+        "de": "Zeit Höchste Tagestemperatur"
       },
       "getable": true,
       "setable": false,
@@ -184,11 +185,13 @@
           "value": "abcdefghijklmnopqrstuvwxyz",
           "label": {
             "en": "Darksky api key",
-            "nl": "Darksky api sleutel"
+            "nl": "Darksky api sleutel",
+            "de": "Darksy api schlüssel"
           },
           "hint": {
             "en": "An API key is required. You can obtain one at https://darksky.net/dev.",
-            "nl": "Een API sleutel is verplicht. U kunt er een opvragen via https://darksky.net/dev."
+            "nl": "Een API sleutel is verplicht. U kunt er een opvragen via https://darksky.net/dev.",
+            "de": "Ein API-Schlüssel ist erforderlich. Sie können einen bei https://darksky.net/dev erhalten."
           }
         },
           {
@@ -231,194 +234,394 @@
   ],
   "flow": {
     "triggers": [
+  {
+    "id": "measure_visibility_capability_trigger",
+    "title": {
+      "en": "Visibility has changed",
+      "nl": "Zichtbaarheid is veranderd",
+      "de": "Sichtbarkeit hat sich geändert"
+    },
+    "hint": {
+      "en": "Triggers when the visibility changes.",
+      "nl": "Triggert zodra de zichtbaarheid veranderd.",
+      "de": "Wird ausgelöst, wenn sich die Sichtbarkeit ändert."
+    },
+    "args": [
       {
-        "id": "measure_visibility_capability_changed",
-        "title": {
-          "en": "Visibility has changed",
-          "nl": "Zichtbaarheid is veranderd"
+        "name": "device",
+        "type": "device",
+        "placeholder": {
+          "en": "select",
+          "nl": "selecteer",
+          "de": "auswählen"
         },
-        "hint": {
-          "en": "Triggers when the visibility changes.",
-          "nl": "Triggert zodra de zichtbaarheid veranderd."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "placeholder": {
-              "en": "selecteer",
-              "nl": "selecteer"
-            },
-            "filter": "driver_id=darksky_current_weather"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "value",
-            "type": "number",
-            "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur"
-            }
-          }]
-      },
+        "filter": "driver_id=darksky_current_weather"
+      }
+    ],
+    "tokens": [
       {
-        "id": "measure_cloudcover_capability_changed",
+        "name": "value",
+        "type": "number",
         "title": {
-          "en": "Cloudcover has changed",
-          "nl": "Bewolking is veranderd"
-        },
-        "hint": {
-          "en": "Triggers when the cloudcoverage has changed",
-          "nl": "Triggert zodra de bewolking veranderd."
-        },
-        "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "placeholder": {
-            "en": "selecteer",
-            "nl": "selecteer"
-          },
-          "filter": "driver_id=darksky_current_weather"
+          "en": "Temperature",
+          "nl": "Temperatuur",
+          "de": "Temperatur"
         }
-      ],
-        "tokens": [
-          {
-            "name": "value",
-            "type": "number",
-            "title": {
-              "en": "Cloud coverage",
-              "nl": "Cloud coverage"
-            }
-          }]
-      },
+      }]
+  },
+  {
+    "id": "measure_cloudcover_capability_trigger",
+    "title": {
+      "en": "Cloudcover has changed",
+      "nl": "Bewolking is veranderd",
+      "de": "Wolkendecke hat sich geändert"
+    },
+    "hint": {
+      "en": "Triggers when the cloudcoverage has changed",
+      "nl": "Triggert zodra de bewolking veranderd.",
+      "de": "Wird ausgelöst, wenn sich die wolkendecke ändert."
+    },
+    "args": [
       {
-        "id": "measure_temperature_low_capability_changed",
+        "name": "device",
+        "type": "device",
+        "placeholder": {
+          "en": "select",
+          "nl": "selecteer",
+          "de": "auswählen"
+        },
+        "filter": "driver_id=darksky_current_weather"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "value",
+        "type": "number",
         "title": {
-          "en": "Lowest day temperature has changed",
-          "nl": "Laagste dagtemperatuur is veranderd"
-        },
-        "hint": {
-          "en": "Triggers when the lowest day temperature changes.",
-          "nl": "Triggert zodra de laagste dagtemperatuur veranderd."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "placeholder": {
-              "en": "selecteer",
-              "nl": "selecteer"
-            },
-            "filter": "driver_id=darksky_current_weather"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "value",
-            "type": "number",
-            "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur"
-            }
-          }]
-      },
+          "en": "Cloud coverage",
+          "nl": "Bewolking",
+          "de": "Wolkendecke"
+        }
+      }]
+  },
+  {
+    "id": "measure_temperature_low_capability_trigger",
+    "title": {
+      "en": "Lowest day temperature has changed",
+      "nl": "Laagste dagtemperatuur is veranderd",
+      "de": "Niedrigste temperatur ist geändert"
+    },
+    "hint": {
+      "en": "Triggers when the lowest day temperature changes.",
+      "nl": "Triggert zodra de laagste dagtemperatuur veranderd.",
+      "de": "Wird ausgelöst wen die Erwartete niedrigste Temperatur ändert"
+    },
+    "args": [
       {
-        "id": "measure_temperature_high_capability_changed",
+        "name": "device",
+        "type": "device",
+        "placeholder": {
+          "en": "select",
+          "nl": "selecteer",
+          "de": "auswählen"
+        },
+        "filter": "driver_id=darksky_current_weather"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "value",
+        "type": "number",
         "title": {
-          "en": "Highest day temperature has changed",
-          "nl": "Hoogste temperatuur is veranderd"
-        },
-        "hint": {
-          "en": "Triggers when the highest day temperature changes.",
-          "nl": "Triggert zodra de hoogste dagtemperatuur veranderd."
-        },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "placeholder": {
-              "en": "selecteer",
-              "nl": "selecteer"
-            },
-            "filter": "driver_id=darksky_current_weather"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "value",
-            "type": "number",
-            "title": {
-              "en": "Temperature",
-              "nl": "Temperatuur"
-            }
-          }]
-      },
+          "en": "Temperature",
+          "nl": "Temperatuur",
+          "de": "Temperatur"
+        }
+      }]
+  },
+  {
+    "id": "measure_temperature_high_capability_trigger",
+    "title": {
+      "en": "Highest day temperature has changed",
+      "nl": "Hoogste temperatuur is veranderd",
+      "de": "Niedrigste temperatur ist geandert"
+    },
+    "hint": {
+      "en": "Triggers when the highest day temperature changes.",
+      "nl": "Triggert zodra de hoogste dagtemperatuur veranderd.",
+      "de": "Wird ausgelöst wen die Erwartete Höchste tagesemperatur ändert"
+    },
+    "args": [
       {
-      "id": "measure_apparent_temperature_capability_changed",
+        "name": "device",
+        "type": "device",
+        "placeholder": {
+          "en": "select",
+          "nl": "selecteer",
+          "de": "auswählen"
+        },
+        "filter": "driver_id=darksky_current_weather"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "value",
+        "type": "number",
+        "title": {
+          "en": "Temperature",
+          "nl": "Temperatuur",
+          "de": "Temperatur"
+        }
+      }]
+  },
+  {
+    "id": "measure_apparent_temperature_capability_trigger",
+    "title": {
+      "en": "Apparent temperature has changed",
+      "nl": "Gevoelstemperatuur is veranderd",
+      "de": "Gefühlte temperatur ändert"
+    },
+    "hint": {
+      "en": "Triggers when the apparent temperature changes.",
+      "nl": "Triggert zodra de gevoelstemperatuur veranderd.",
+      "de": "Wird ausgelöst wen die Gefühlte tagesemperatur ändert"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "placeholder": {
+          "en": "select",
+          "nl": "selecteer",
+          "de": "auswählen"
+        },
+        "filter": "driver_id=darksky_current_weather"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "value",
+        "type": "number",
+        "title": {
+          "en": "Temperature",
+          "nl": "Temperatuur",
+          "de": "Temperatur"
+        }
+      }]
+  },
+  {
+    "id": "measure_uvindex_capability_trigger",
+    "title": {
+      "en": "UV index has changed",
+      "nl": "Zonkracht is veranderd",
+      "de": "UV index ändert"
+    },
+    "hint": {
+      "en": "Triggers when UV Index changes.",
+      "nl": "Triggert zodra de zonkracht veranderd.",
+      "de": "Wird ausgelöst wen die UV index ändert"
+    },
+    "args": [
+      {
+        "name": "device",
+        "type": "device",
+        "placeholder": {
+          "en": "select",
+          "nl": "selecteer",
+          "de": "auswählen"
+        },
+        "filter": "driver_id=darksky_current_weather"
+      }
+    ],
+    "tokens": [
+      {
+        "name": "value",
+        "type": "number",
+        "title": {
+          "en": "uv index",
+          "nl": "Zonkracht"
+        }
+      }]
+  }
+],
+  "conditions": [
+    {
+      "id": "measure_uvindex_capability_condition",
       "title": {
-        "en": "apparent temperature has changed",
-        "nl": "Gevoelstemperatuur is veranderd"
+        "en": "UV index !{{is|isn't}} higher than",
+        "nl": "Zonkracht !{{is|is niet}} groter dan",
+        "de": "UV index !{{ist|ist nicht}} größer denn"
       },
       "hint": {
-        "en": "Triggers when the apparent temperature changes.",
-        "nl": "Triggert zodra de gevoelstemperatuur veranderd."
+        "en": "UV index",
+        "nl": "Zonkracht",
+        "de": "UV-index"
       },
       "args": [
         {
           "name": "device",
           "type": "device",
           "placeholder": {
-            "en": "selecteer",
-            "nl": "selecteer"
+            "en": "select",
+            "nl": "selecteer",
+            "de": "auswählen"
           },
           "filter": "driver_id=darksky_current_weather"
-        }
-      ],
-      "tokens": [
+        },
         {
           "name": "value",
-          "type": "number",
-          "title": {
-            "en": "Temperature",
-            "nl": "Temperatuur"
-          }
-        }]
+          "type": "number"
+        }
+      ]
     },
-      {
-        "id": "measure_uvindex_capability_changed",
-        "title": {
-          "en": "UV index has changed",
-          "nl": "Zonkracht is veranderd"
+    {
+      "id": "measure_apparent_temperature_capability_condition",
+      "title": {
+        "en": "Apparent temperature !{{is|isn't}} higher than",
+        "nl": "Gevoelstemperatuur !{{is|is niet}} groter dan",
+        "de": "Gefühlte temperatur !{{ist|ist nicht}} größer denn"
+      },
+      "hint": {
+        "en": "Temperature in °C",
+        "nl": "Temperatuur in °C",
+        "de": "Temperatur in °C"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "placeholder": {
+            "en": "select",
+            "nl": "selecteer",
+            "de": "auswählen"
+          },
+          "filter": "driver_id=darksky_current_weather"
         },
-        "hint": {
-          "en": "Triggers when UV Index changes.",
-          "nl": "Triggert zodra de zonkracht veranderd."
+        {
+          "name": "value",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "measure_temperature_high_capability_condition",
+      "title": {
+        "en": "Highest day temperature !{{is|isn't}} higher than",
+        "nl": "Hoogste dagtemperatuur !{{is|is niet}} groter dan",
+        "de": "Höchste temperatur !{{ist|ist nicht}} größer denn"
+      },
+      "hint": {
+        "en": "Temperature in °C",
+        "nl": "Temperatuur in °C",
+        "de": "Temperatur in °C"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "placeholder": {
+            "en": "select",
+            "nl": "selecteer",
+            "de": "auswählen"
+          },
+          "filter": "driver_id=darksky_current_weather"
         },
-        "args": [
-          {
-            "name": "device",
-            "type": "device",
-            "placeholder": {
-              "en": "selecteer",
-              "nl": "selecteer"
-            },
-            "filter": "driver_id=darksky_current_weather"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "value",
-            "type": "number",
-            "title": {
-              "en": "uv index",
-              "nl": "Zonkracht"
-            }
-          }]
-      }
-    ]
-  },
+        {
+          "name": "value",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "measure_temperature_low_capability_condition",
+      "title": {
+        "en": "Lowest day temperature !{{is|isn't}} higher than",
+        "nl": "Laagste dagtemperatuur !{{is|is niet}} groter dan",
+        "de": "Niedrigste temperatur !{{ist|ist nicht}} größer denn"
+      },
+      "hint": {
+        "en": "Temperature in °C",
+        "nl": "Temperatuur in °C",
+        "de": "Temperatur in °C"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "placeholder": {
+            "en": "select",
+            "nl": "selecteer",
+            "de": "auswählen"
+          },
+          "filter": "driver_id=darksky_current_weather"
+        },
+        {
+          "name": "value",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "measure_cloudcover_capability_condition",
+      "title": {
+        "en": "Cloudcover !{{is|isn't}} higher than",
+        "nl": "Bewolking !{{is|is niet}} groter dan",
+        "de": "Wolkendecke !{{ist|ist nicht}} größer denn"
+      },
+      "hint": {
+        "en": "Cloudcover in %",
+        "nl": "Bewolking in %",
+        "de": "Wolkendecke in %"
+
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "placeholder": {
+            "en": "select",
+            "nl": "selecteer",
+            "de": "auswählen"
+          },
+          "filter": "driver_id=darksky_current_weather"
+        },
+        {
+          "name": "value",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "id": "measure_visibility_capability_condition",
+      "title": {
+        "en": "Visibility !{{is|isn't}} higher than",
+        "nl": "Zichtbaarheid !{{is|is niet}} groter dan",
+        "de": "Sichtbarkeit !{{ist|ist nicht}} größer denn"
+      },
+      "hint": {
+        "en": "Visibility in KM",
+        "nl": "Zichtbaarheid in KM",
+        "de": "Sichtbarkeit in KM"
+      },
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "placeholder": {
+            "en": "select",
+            "nl": "selecteer",
+            "de": "auswählen"
+          },
+          "filter": "driver_id=darksky_current_weather"
+        },
+        {
+          "name": "value",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+},
   "contributing": {
     "donate": {
       "paypal": {

@@ -4,7 +4,7 @@ const Homey = require('homey');
 const format = require('string-format')
 const https = require("https");
 const HOUR_MILLISECONDS = 3600;
-const API_URL = "https://api.darksky.net/forecast/{0}/{1},{2}/?exclude=hourly,flags&units=si";
+const API_URL = "https://api.darksky.net/forecast/{0}/{1},{2}/?flags&units=si";
 
 
 
@@ -13,9 +13,6 @@ const CRONTASK_RETRIEVEWEATHERINFO = "eu.jeroensomhorst.darkskyweather.cron";
 class DarkskyDriver extends Homey.Driver{
 
     async onInit() {
-
-        this.log('Initialize driver');
-
         Homey.ManagerCron.getTask(CRONTASK_RETRIEVEWEATHERINFO)
             .then(task => {
                 this.log("The task exists: " + CRONTASK_RETRIEVEWEATHERINFO);
@@ -37,10 +34,24 @@ class DarkskyDriver extends Homey.Driver{
             });
 
         this.retrievedDaily = -1;
+
+        this.capabilities = Homey.manifest.capabilities;
+        this.triggerKeys = [];
+        this.conditionKeys = [];
+        if(Homey.manifest.hasOwnProperty('flow')){
+            if(Homey.manifest.flow.hasOwnProperty('triggers')) {
+                Homey.manifest.flow.triggers.forEach((element) => {
+                    this.triggerKeys.push(element.id);
+                });
+            }
+
+            if(Homey.manifest.flow.hasOwnProperty('conditions')) {
+                Homey.manifest.flow.conditions.forEach((element) => {
+                    this.conditionKeys.push(element.id);
+                });
+            }
+        }
     }
-
-
-
 
     async onCronRun(){
         this.log("cron run!");

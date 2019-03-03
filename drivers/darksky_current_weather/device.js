@@ -9,15 +9,70 @@ class DarkskyDevice extends Homey.Device{
     onInit(){
         Homey.app.log('Initialize device');
         this.triggers = new Map();
+        this.conditions = new Map();
+        let cstmCapabilities = Homey.manifest.capabilities;
+        let driver = this.getDriver();
 
-        this.triggers.set("measure_visibility_capability",new Homey.FlowCardTriggerDevice('measure_visibility_capability_changed').register());
-        this.triggers.set("measure_uvindex_capability",new Homey.FlowCardTriggerDevice('measure_uvindex_capability_changed').register());
-        this.triggers.set("measure_apparent_temperature_capability",new Homey.FlowCardTriggerDevice('measure_apparent_temperature_capability_changed').register());
-        this.triggers.set("measure_temperature_high_capability",new Homey.FlowCardTriggerDevice('measure_temperature_high_capability_changed').register());
-        this.triggers.set("measure_temperature_low_capability",new Homey.FlowCardTriggerDevice('measure_temperature_low_capability_changed').register());
-        this.triggers.set("measure_cloudcover_capability",new Homey.FlowCardTriggerDevice('measure_cloudcover_capability_changed').register());
+
+        this.getCapabilities().forEach((c)=>{
+
+            if(cstmCapabilities.hasOwnProperty(c)){
+                console.log("Adding capabilities and triggers for "+c);
+                try {
+                    let triggerName = c + "_trigger";
+                    let conditionName = c + "_condition";
+
+                    if(driver.triggerKeys.indexOf(triggerName) > -1){
+                        this.triggers.set(c, new Homey.FlowCardTriggerDevice(triggerName).register());
+                    }
+
+                    if(driver.conditionKeys.indexOf(conditionName) > -1){
+                        let condition = new Homey.FlowCardCondition(conditionName).register();
+                        this.conditions.set(c,condition );
+                        condition.registerRunListener((args,state)=>{
+                            return this.onConditionTrigger(args, state,c);
+                        });
+                    }
+
+                }catch(e){
+                    console.error("Could not add trigger or condition");
+                    console.error(e);
+                }
+            }
+
+        });
+
+        /*
+        console.log("Add vis trigger");
+
+        this.triggers.set("measure_visibility_capability",new Homey.FlowCardTriggerDevice('measure_visibility_capability_trigger').register());
+        console.log("Add uvindex trigger");
+        this.triggers.set("measure_uvindex_capability",new Homey.FlowCardTriggerDevice('measure_uvindex_capability_trigger').register());
+        console.log("Add app temp trigger");
+        this.triggers.set("measure_apparent_temperature_capability",new Homey.FlowCardTriggerDevice('measure_apparent_temperature_capability_trigger').register());
+        console.log("Add high temp trigger");
+        this.triggers.set("measure_temperature_high_capability",new Homey.FlowCardTriggerDevice('measure_temperature_high_capability_trigger').register());
+        console.log("Add lowtemp trigger");
+        this.triggers.set("measure_temperature_low_capability",new Homey.FlowCardTriggerDevice('measure_temperature_low_capability_trigger').register());
+        console.log("Add cloudcover trigger");
+        this.triggers.set("measure_cloudcover_capability",new Homey.FlowCardTriggerDevice('measure_cloudcover_capability_trigger').register());
+        */
+
+
 
     }
+
+    onConditionTrigger(args,state,name){
+        console.log("Condition trigger for "+name);
+        try{
+            let currentvalue = this.getCapabilityValue(name);
+            return Promise.resolve(currentvalue>=args.value);
+        }catch(e){
+            return Promise.reject('Unknown capability');
+        }
+
+    }
+
     async onSettings(oldSettingsObj, newSettingsObj, changedKeys){
         let driver = this.getDriver();
         let apiKey = newSettingsObj.apikey || "";
@@ -59,9 +114,10 @@ class DarkskyDevice extends Homey.Device{
         let previousValue = this.getCapabilityValue(capability);
         super.setCapabilityValue(capability,value);
 
-        Homey.app.log("Trigger the change");
-        Homey.app.log(capability);
-        if(previousValue != value) {
+
+        if(previousValue !== value) {
+            Homey.app.log("Trigger the change");
+            Homey.app.log(capability);
             if (this.triggers.has(capability)) {
                 Homey.app.log("Found a trigger");
                 let trigger = this.triggers.get(capability);

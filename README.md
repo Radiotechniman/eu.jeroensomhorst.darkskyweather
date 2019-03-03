@@ -9,6 +9,7 @@ to not overload the server / key usage.
 
 # Changelog
 
+* 0.0.6 Added conditions for custom capabilities. Fixed some translations and added German translations
 * 0.0.5 Changed the label for the highest / lowest day temperature to expected highest / lowest temperature
         swapped the highest / lowest day temp times
         Fixed the triggers in flows.
