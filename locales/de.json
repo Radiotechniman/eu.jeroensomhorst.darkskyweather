@@ -1,6 +1,8 @@
 {
   "settings_apikey_required":  "Ein API-Schlüssel ist erforderlich",
   "settings_apikey_invalid": "Der bereitgestellte API-Schlüssel scheint ungültig zu sein",
+  "settings_longtitude_invalid": "Der bereitgestellte Längengrad scheint ungültig zu sein",
+  "settings_latitude_invalid": "Der bereitgestellte Breitengrad scheint ungültig zu sein",
   "api_key_label": "API-Schlüssel",
   "longtitude": "Längengrad",
   "latitude": "Breitengrad"

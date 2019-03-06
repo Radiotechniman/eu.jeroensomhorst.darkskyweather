@@ -77,9 +77,9 @@ class DarkskyDriver extends Homey.Driver{
                 device.setCapabilityValue("measure_humidity", Math.round(current.humidity * 100));
                 device.setCapabilityValue("measure_pressure", current.pressure);
                 device.setCapabilityValue("measure_rain", current.precipIntensity);
-                device.setCapabilityValue("measure_wind_strength", current.windSpeed);
+                device.setCapabilityValue("measure_wind_strength", current.windSpeed*3.6);
                 device.setCapabilityValue("measure_wind_angle", current.windBearing);
-                device.setCapabilityValue("measure_gust_strength", current.windGust);
+                device.setCapabilityValue("measure_gust_strength", current.windGust*3.6);
                 device.setCapabilityValue("measure_visibility_capability", current.visibility);
                 device.setCapabilityValue("measure_uvindex_capability", current.uvIndex);
                 device.setCapabilityValue("measure_apparent_temperature_capability", current.apparentTemperature);

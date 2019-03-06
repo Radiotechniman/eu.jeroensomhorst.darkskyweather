@@ -1,6 +1,8 @@
 {
   "settings_apikey_required":  "An API Key is required",
   "settings_apikey_invalid": "The provided api key seems to be invalid",
+  "settings_longtitude_invalid": "Please enter a valid value for longtitude.",
+  "settings_latitude_invalid": "Please enter a valid value for latitude",
   "api_key_label": "API Key:",
   "longtitude": "Longtitude",
   "latitude": "Latitude"

@@ -1,6 +1,6 @@
 {
   "id": "eu.jeroensomhorst.darkskyweather",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "compatibility": ">=1.5.0",
   "sdk": 2,
   "name": {
@@ -198,6 +198,8 @@
             "id": "longtitude",
             "type": "number",
             "value": 0,
+            "min": -180,
+            "max": 180,
             "label": {
               "en": "Longtitude",
               "nl": "Lengtegraad",
@@ -208,6 +210,8 @@
             "id": "latitude",
             "type": "number",
             "value": 0,
+            "min": -90,
+            "max": 90,
             "label": {
               "en": "Latitude",
               "nl": "Breedtegraad",

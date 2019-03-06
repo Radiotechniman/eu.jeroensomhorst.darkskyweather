@@ -42,28 +42,9 @@ class DarkskyDevice extends Homey.Device{
 
         });
 
-        /*
-        console.log("Add vis trigger");
-
-        this.triggers.set("measure_visibility_capability",new Homey.FlowCardTriggerDevice('measure_visibility_capability_trigger').register());
-        console.log("Add uvindex trigger");
-        this.triggers.set("measure_uvindex_capability",new Homey.FlowCardTriggerDevice('measure_uvindex_capability_trigger').register());
-        console.log("Add app temp trigger");
-        this.triggers.set("measure_apparent_temperature_capability",new Homey.FlowCardTriggerDevice('measure_apparent_temperature_capability_trigger').register());
-        console.log("Add high temp trigger");
-        this.triggers.set("measure_temperature_high_capability",new Homey.FlowCardTriggerDevice('measure_temperature_high_capability_trigger').register());
-        console.log("Add lowtemp trigger");
-        this.triggers.set("measure_temperature_low_capability",new Homey.FlowCardTriggerDevice('measure_temperature_low_capability_trigger').register());
-        console.log("Add cloudcover trigger");
-        this.triggers.set("measure_cloudcover_capability",new Homey.FlowCardTriggerDevice('measure_cloudcover_capability_trigger').register());
-        */
-
-
-
     }
 
     onConditionTrigger(args,state,name){
-        console.log("Condition trigger for "+name);
         try{
             let currentvalue = this.getCapabilityValue(name);
             return Promise.resolve(currentvalue>=args.value);
@@ -110,16 +91,10 @@ class DarkskyDevice extends Homey.Device{
     }
 
     setCapabilityValue(capability,value){
-        Homey.app.log("Set capability value");
         let previousValue = this.getCapabilityValue(capability);
         super.setCapabilityValue(capability,value);
-
-
         if(previousValue !== value) {
-            Homey.app.log("Trigger the change");
-            Homey.app.log(capability);
             if (this.triggers.has(capability)) {
-                Homey.app.log("Found a trigger");
                 let trigger = this.triggers.get(capability);
 
                 trigger.trigger(this, {value: value})
@@ -134,12 +109,9 @@ class DarkskyDevice extends Homey.Device{
 
     hasValidSettings(){
         let settings = this.getSettings();
-        if((settings.hasOwnProperty('apikey') && settings.apikey !== DEFAULT_API_KEY && (settings.apikey!== "" || settings.apikey === null))
+        return ((settings.hasOwnProperty('apikey') && settings.apikey !== DEFAULT_API_KEY && (settings.apikey!== "" || settings.apikey === null))
             && (settings.hasOwnProperty('latitude') && (settings.latitude!== 0 || settings.latitude === null))
-            && (settings.hasOwnProperty('longtitude') && (settings.longtitude!== 0 || settings.longtitude === null) )){
-            return true;
-        }
-        return false;
+            && (settings.hasOwnProperty('longtitude') && (settings.longtitude!== 0 || settings.longtitude === null) ));
     }
 
     getApiKey(){

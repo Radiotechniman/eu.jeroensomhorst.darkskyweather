@@ -87,6 +87,18 @@
                 Homey.alert(__('settings_apikey_required'), 'error');
                 return;
             }
+
+            if(latitude < -90 || latitude > 90){
+              Homey.alert(__('settings_latitude_invalid'), 'error');
+              return false
+            }
+
+          if(longtitude < -180 || longtitude > 180){
+            Homey.alert(__('settings_longtitude_invalid'), 'error');
+            return false
+          }
+
+
             $('.solar-status').removeClass('visible');
             $('.solar-loading').addClass('visible');
             Homey.emit('validate', {
