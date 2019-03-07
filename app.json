@@ -11,7 +11,7 @@
   "description": {
     "en": "Get weather info using Dark Sky",
     "nl": "Get weather info using Dark Sky",
-    "de": "Erhalten Sie Wetterinformationen mit Dark Sky"
+    "de": "Wettervorhersagen unter Dark Sky"
   },
   "category": [
     "climate"
@@ -32,7 +32,8 @@
       "type": "number",
       "title": {
         "en": "UV-index",
-        "nl": "Zonkracht"
+        "nl": "Zonkracht",
+        "de": "UV-index"
       },
       "getable": true,
       "setable": false,
@@ -42,7 +43,8 @@
       "type": "number",
       "title": {
         "nl": "Gevoelstemperatuur",
-        "en": "Wind chill"
+        "en": "Wind chill",
+        "de": "Gefühlte Temperatur"
       },"units": {
         "en": "°C",
         "nl": "°C",
@@ -57,7 +59,7 @@
       "title": {
         "en": "Visibility",
         "nl": "Zichtbaarheid",
-        "de": "Sichtweite"
+        "de": "Sicht"
       },
       "units": {
         "en": "km",
@@ -73,7 +75,7 @@
       "title": {
         "nl": "Verwachte hoogste dagtemperatuur",
         "en": "Highest expected temperature",
-        "de": "Erwartete Heu-Temperatur"
+        "de": "Erwartete Höchsttemperatur"
       },
       "units": {
         "en": "°C",
@@ -89,7 +91,7 @@
       "title": {
         "nl": "Verwachte laagste dagtemperatuur",
         "en": "Lowest expected temperature",
-        "de": "Erwartete niedrigste Temperatur"
+        "de": "Erwartete Tiefsttemperatur"
       },
       "units": {
         "en": "°C",
@@ -105,7 +107,7 @@
       "title": {
         "nl": "Tijd laagste dagtemperatuur",
         "en": "Time Lowest daytime temperature",
-        "de": "Zeit Niedrigste Tagestemperatur"
+        "de": "Zeit der Tiefsttemperatur"
       },
       "getable": true,
       "setable": false,
@@ -116,7 +118,7 @@
       "title": {
         "nl": "Tijd hoogste dagtemperatuur",
         "en": "Time Highest temperature",
-        "de": "Zeit Höchste Tagestemperatur"
+        "de": "Zeit der Höchsttemperatur"
       },
       "getable": true,
       "setable": false,
@@ -176,7 +178,8 @@
         "type": "group",
         "label": {
           "en": "Darksky settings",
-          "nl": "Darksky instellingen"
+          "nl": "Darksky instellingen",
+          "de": "Darksky Einstellungen"
         },
         "children": [
           {
@@ -186,12 +189,12 @@
           "label": {
             "en": "Darksky api key",
             "nl": "Darksky api sleutel",
-            "de": "Darksy api schlüssel"
+            "de": "Darksky API-Schlüssel"
           },
           "hint": {
             "en": "An API key is required. You can obtain one at https://darksky.net/dev.",
             "nl": "Een API sleutel is verplicht. U kunt er een opvragen via https://darksky.net/dev.",
-            "de": "Ein API-Schlüssel ist erforderlich. Sie können einen bei https://darksky.net/dev erhalten."
+            "de": "Es wird ein API-Schlüssel benötigt. Sie können ihn beziehen bei https://darksky.net/dev."
           }
         },
           {
@@ -248,7 +251,7 @@
     "hint": {
       "en": "Triggers when the visibility changes.",
       "nl": "Triggert zodra de zichtbaarheid veranderd.",
-      "de": "Wird ausgelöst, wenn sich die Sichtbarkeit ändert."
+      "de": "Auslöser wenn sich die Sicht ändert."
     },
     "args": [
       {
@@ -257,7 +260,7 @@
         "placeholder": {
           "en": "select",
           "nl": "selecteer",
-          "de": "auswählen"
+          "de": "Auswahl"
         },
         "filter": "driver_id=darksky_current_weather"
       }
@@ -278,12 +281,12 @@
     "title": {
       "en": "Cloudcover has changed",
       "nl": "Bewolking is veranderd",
-      "de": "Wolkendecke hat sich geändert"
+      "de": "Wolkendecke hat sich geändert."
     },
     "hint": {
       "en": "Triggers when the cloudcoverage has changed",
       "nl": "Triggert zodra de bewolking veranderd.",
-      "de": "Wird ausgelöst, wenn sich die wolkendecke ändert."
+      "de": "Auslöser wen sich die Wolkendecke ändert."
     },
     "args": [
       {
@@ -292,7 +295,7 @@
         "placeholder": {
           "en": "select",
           "nl": "selecteer",
-          "de": "auswählen"
+          "de": "Auswahl"
         },
         "filter": "driver_id=darksky_current_weather"
       }
@@ -313,12 +316,12 @@
     "title": {
       "en": "Lowest day temperature has changed",
       "nl": "Laagste dagtemperatuur is veranderd",
-      "de": "Niedrigste temperatur ist geändert"
+      "de": "Tiefsttemperatur hat sich geändert"
     },
     "hint": {
       "en": "Triggers when the lowest day temperature changes.",
       "nl": "Triggert zodra de laagste dagtemperatuur veranderd.",
-      "de": "Wird ausgelöst wen die Erwartete niedrigste Temperatur ändert"
+      "de": "Auslöser wenn sich die Tiefsttemperatur ändert"
     },
     "args": [
       {
@@ -327,7 +330,7 @@
         "placeholder": {
           "en": "select",
           "nl": "selecteer",
-          "de": "auswählen"
+          "de": "Auswahl"
         },
         "filter": "driver_id=darksky_current_weather"
       }
@@ -348,12 +351,12 @@
     "title": {
       "en": "Highest day temperature has changed",
       "nl": "Hoogste temperatuur is veranderd",
-      "de": "Niedrigste temperatur ist geandert"
+      "de": "Höchsttemperatur  hat sich geändert"
     },
     "hint": {
       "en": "Triggers when the highest day temperature changes.",
       "nl": "Triggert zodra de hoogste dagtemperatuur veranderd.",
-      "de": "Wird ausgelöst wen die Erwartete Höchste tagesemperatur ändert"
+      "de": "Auslöser wenn sich die Höchsttemperatur ändert"
     },
     "args": [
       {
@@ -362,7 +365,7 @@
         "placeholder": {
           "en": "select",
           "nl": "selecteer",
-          "de": "auswählen"
+          "de": "Auswahl"
         },
         "filter": "driver_id=darksky_current_weather"
       }
@@ -383,12 +386,12 @@
     "title": {
       "en": "Apparent temperature has changed",
       "nl": "Gevoelstemperatuur is veranderd",
-      "de": "Gefühlte temperatur ändert"
+      "de": "Gefühlte Temperatur hat sich geändert"
     },
     "hint": {
       "en": "Triggers when the apparent temperature changes.",
       "nl": "Triggert zodra de gevoelstemperatuur veranderd.",
-      "de": "Wird ausgelöst wen die Gefühlte tagesemperatur ändert"
+      "de": "Auslöser wenn sich die gefühlte Temperatur ändert."
     },
     "args": [
       {
@@ -397,7 +400,7 @@
         "placeholder": {
           "en": "select",
           "nl": "selecteer",
-          "de": "auswählen"
+          "de": "Auswahl"
         },
         "filter": "driver_id=darksky_current_weather"
       }
@@ -418,12 +421,12 @@
     "title": {
       "en": "UV index has changed",
       "nl": "Zonkracht is veranderd",
-      "de": "UV index ändert"
+      "de": "UV-Index hat sich geändert"
     },
     "hint": {
       "en": "Triggers when UV Index changes.",
       "nl": "Triggert zodra de zonkracht veranderd.",
-      "de": "Wird ausgelöst wen die UV index ändert"
+      "de": "Auslöser wenn sich der UV-Index ändert."
     },
     "args": [
       {
@@ -432,7 +435,7 @@
         "placeholder": {
           "en": "select",
           "nl": "selecteer",
-          "de": "auswählen"
+          "de": "Auswahl"
         },
         "filter": "driver_id=darksky_current_weather"
       }
@@ -468,7 +471,7 @@
           "placeholder": {
             "en": "select",
             "nl": "selecteer",
-            "de": "auswählen"
+            "de": "Auswahl"
           },
           "filter": "driver_id=darksky_current_weather"
         },
@@ -497,7 +500,7 @@
           "placeholder": {
             "en": "select",
             "nl": "selecteer",
-            "de": "auswählen"
+            "de": "Auswahl"
           },
           "filter": "driver_id=darksky_current_weather"
         },
@@ -526,7 +529,7 @@
           "placeholder": {
             "en": "select",
             "nl": "selecteer",
-            "de": "auswählen"
+            "de": "Auswahl"
           },
           "filter": "driver_id=darksky_current_weather"
         },
@@ -555,7 +558,7 @@
           "placeholder": {
             "en": "select",
             "nl": "selecteer",
-            "de": "auswählen"
+            "de": "Auswahl"
           },
           "filter": "driver_id=darksky_current_weather"
         },
@@ -585,7 +588,7 @@
           "placeholder": {
             "en": "select",
             "nl": "selecteer",
-            "de": "auswählen"
+            "de": "Auswahl"
           },
           "filter": "driver_id=darksky_current_weather"
         },
@@ -614,7 +617,7 @@
           "placeholder": {
             "en": "select",
             "nl": "selecteer",
-            "de": "auswählen"
+            "de": "Auswahl"
           },
           "filter": "driver_id=darksky_current_weather"
         },
