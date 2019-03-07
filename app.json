@@ -446,7 +446,8 @@
         "type": "number",
         "title": {
           "en": "uv index",
-          "nl": "Zonkracht"
+          "nl": "Zonkracht",
+          "de": "UV-index"
         }
       }]
   }
