@@ -103,6 +103,7 @@ class DarkskyDevice extends Homey.Device{
 
             } else {
                 Homey.app.log("Could not find trigger for capability");
+                Homey.app.log(capability);
             }
         }
     }

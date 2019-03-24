@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea334c8-d648-4bbf-a99e-b2183331b6d3" name="Default Changelist" comment="fixed image">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="eea334c8-d648-4bbf-a99e-b2183331b6d3" name="Default Changelist" comment="Fixed bug #6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/large.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/large.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/small.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/small.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,56 +15,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/icon.svg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/device.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/images/large.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cron</find>
-      <find>FlowCardTriggerDevice</find>
-      <find>measure_visibility_capability</find>
-      <find>validateApiKey</find>
-      <find>setcapa</find>
-      <find>apikey</find>
-      <find>measure_temperature_high_capability</find>
-      <find>pair-</find>
-      <find>permis</find>
-      <find>name</find>
-      <find>contriu</find>
-      <find>domoti</find>
-      <find>domo</find>
-      <find>error wh</find>
-      <find>domoticz</find>
-      <find>getwe</find>
-      <find>validateapi</find>
-      <find>validate</find>
-      <find>dars</find>
-      <find>units</find>
-      <find>measure_temperature_hightime_capability</find>
       <find>measure_temperature_lowtime_capability</find>
-      <find>measure_temperature_low_capability</find>
-      <find>measure_cloudcover_capability</find>
-      <find>measure_cloud</find>
-      <find>measure_cloudcover_capability_changed</find>
-      <find>drivers</find>
-      <find>measure_uvindex_capability</find>
-      <find>measure_apparent_temperature_capability</find>
+      <find>onConditionTrigger</find>
+      <find>getcapabil</find>
+      <find>rain</find>
+      <find>auswh</find>
+      <find>triggers</find>
+      <find>measure_temperature_low_capability_trigger</find>
+      <find>Hoogste</find>
+      <find>apparent</find>
+      <find>zonkracht</find>
+      <find>zonkracht in</find>
+      <find>API_URL</find>
       <find>getWeather</find>
+      <find>precipitation</find>
+      <find>measure_wind_strength</find>
+      <find>measure_gust_strength</find>
+      <find>type</find>
+      <find>auswählen</find>
+      <find>token</find>
+      <find>tokens</find>
+      <find>args</find>
+      <find>.get</find>
+      <find>this.cap</find>
+      <find>capabilities</find>
+      <find>Could not retrieve api data for device</find>
+      <find>COUOLD</find>
+      <find>api data</find>
+      <find>api</find>
+      <find>COULD NOT FIND</find>
+      <find>Could not find trigger for capability</find>
     </findStrings>
     <replaceStrings>
       <replace>currently</replace>
       <replace>currently.</replace>
       <replace>this.log</replace>
       <replace>let</replace>
+      <replace>_trigger</replace>
+      <replace>Auswahl</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\jsomh\PhpstormProjects\eu.jeroensomhorst.darkskyweather</dir>
@@ -127,22 +146,23 @@
         <option value="$PROJECT_DIR$/drivers/darksky_current_weather/pair/darsky_pair" />
         <option value="$PROJECT_DIR$/locales/nl.json" />
         <option value="$PROJECT_DIR$/locales/en.json" />
-        <option value="$PROJECT_DIR$/locales/de.json" />
-        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/pair/darksky_pair.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/assets/cap_apparent_temperature.svg" />
-        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" />
-        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" />
-        <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/pair/darksky_pair.html" />
+        <option value="$PROJECT_DIR$/locales/de.json" />
         <option value="$PROJECT_DIR$/../app.json" />
-        <option value="$PROJECT_DIR$/../README.md" />
         <option value="$PROJECT_DIR$/../drivers/darksky_current_weather/driver.js" />
+        <option value="$PROJECT_DIR$/../README.md" />
+        <option value="$PROJECT_DIR$/../locales/en.json" />
+        <option value="$PROJECT_DIR$/../locales/nl.json" />
+        <option value="$PROJECT_DIR$/app.json" />
+        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/driver.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/drivers/darksky_current_weather/device.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="399" />
-    <option name="y" value="298" />
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -162,13 +182,18 @@
             <path>
               <item name="eu.jeroensomhorst.darkskyweather" type="b2602c69:ProjectViewProjectNode" />
               <item name="eu.jeroensomhorst.darkskyweather" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="drivers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="eu.jeroensomhorst.darkskyweather" type="b2602c69:ProjectViewProjectNode" />
               <item name="eu.jeroensomhorst.darkskyweather" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="drivers" type="462c0819:PsiDirectoryNode" />
+              <item name="darksky_current_weather" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eu.jeroensomhorst.darkskyweather" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eu.jeroensomhorst.darkskyweather" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -179,7 +204,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../eu.jeroensomhorst.domoticz" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -249,7 +274,34 @@
       <workItem from="1550393533542" duration="483000" />
       <workItem from="1550394244703" duration="1483000" />
       <workItem from="1550401246247" duration="51000" />
-      <workItem from="1551119863404" duration="647000" />
+      <workItem from="1551119863404" duration="1951000" />
+      <workItem from="1551124034619" duration="133000" />
+      <workItem from="1551127909578" duration="313000" />
+      <workItem from="1551203549142" duration="619000" />
+      <workItem from="1551286360583" duration="606000" />
+      <workItem from="1551287017173" duration="2282000" />
+      <workItem from="1551292130776" duration="93000" />
+      <workItem from="1551377646330" duration="170000" />
+      <workItem from="1551378614249" duration="1093000" />
+      <workItem from="1551380911545" duration="32000" />
+      <workItem from="1551515155068" duration="2409000" />
+      <workItem from="1551596264199" duration="16035000" />
+      <workItem from="1551612506052" duration="633000" />
+      <workItem from="1551617206590" duration="327000" />
+      <workItem from="1551627056586" duration="1171000" />
+      <workItem from="1551629915465" duration="17000" />
+      <workItem from="1551718596847" duration="45000" />
+      <workItem from="1551720006037" duration="1098000" />
+      <workItem from="1551725562316" duration="282000" />
+      <workItem from="1551888454918" duration="1624000" />
+      <workItem from="1551976875268" duration="33000" />
+      <workItem from="1551977250229" duration="827000" />
+      <workItem from="1551979547826" duration="1293000" />
+      <workItem from="1551985381655" duration="94000" />
+      <workItem from="1551988376740" duration="8000" />
+      <workItem from="1552820444408" duration="1112000" />
+      <workItem from="1552823060501" duration="118000" />
+      <workItem from="1553428015395" duration="508000" />
     </task>
     <task id="LOCAL-00001" summary="lots of changes...">
       <created>1549696504442</created>
@@ -377,11 +429,74 @@
       <option name="project" value="LOCAL" />
       <updated>1551119903199</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixed image">
+      <created>1551120706727</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1551120706727</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fixed image">
+      <created>1551128066801</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1551128066801</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Swapped the highest/lowest daytemp times&#10;Changed the label for highest/lowest day temperature to better explain">
+      <created>1551287072372</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1551287072372</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixed image">
+      <created>1551291575231</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1551291575231</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fixed bug that would cause triggers always to fire">
+      <created>1551292188161</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1551292188161</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added conditions for custom capabilities, added german translations&#10;also added dynamic inclusion of trigger/condition cards.">
+      <created>1551611878704</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1551611878704</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Fixed bug #6&#10;Added extra validation on pair view / settings view">
+      <created>1551889628515</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1551889628515</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fixed bug #6&#10;added german translations">
+      <created>1551980644039</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1551980644039</updated>
+    </task>
+    <task id="LOCAL-00027" summary="fixed more german translations">
+      <created>1551980715188</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1551980715188</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79417000" />
+    <option name="totallyTimeSpent" value="113696000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -396,7 +511,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10660981" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14978679" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -405,12 +520,12 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3298731" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.404814" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840087" visible="true" weight="0.31852654" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50159913" side_tool="true" weight="0.36511377" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -432,8 +547,14 @@
     <MESSAGE value="Added cloud coverage as capability" />
     <MESSAGE value="Fixed a minor bug with humidity and cloudcover" />
     <MESSAGE value="Sometimes I don't know how Math.round works ;)" />
+    <MESSAGE value="Swapped the highest/lowest daytemp times&#10;Changed the label for highest/lowest day temperature to better explain" />
     <MESSAGE value="fixed image" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed image" />
+    <MESSAGE value="Fixed bug that would cause triggers always to fire" />
+    <MESSAGE value="Added conditions for custom capabilities, added german translations&#10;also added dynamic inclusion of trigger/condition cards." />
+    <MESSAGE value="Fixed bug #6&#10;Added extra validation on pair view / settings view" />
+    <MESSAGE value="Fixed bug #6&#10;added german translations" />
+    <MESSAGE value="fixed more german translations" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed more german translations" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/Thermometer.svg" />
@@ -444,33 +565,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../node_modules/string-format/index.js" />
     <entry file="file://$PROJECT_DIR$/app.js" />
     <entry file="file://$PROJECT_DIR$/drivers/darksky_hourly_forecast/driver.js" />
     <entry file="file://$PROJECT_DIR$/drivers/darksky_hourly_forecast/device.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/darksky/index.js" />
-    <entry file="file://$PROJECT_DIR$/../locales/nl.json" />
-    <entry file="file://$PROJECT_DIR$/../locales/de.json" />
-    <entry file="file://$PROJECT_DIR$/../assets/icon.svg" />
-    <entry file="file://$PROJECT_DIR$/../locales/en.json" />
-    <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/assets/images/small.png" />
-    <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/assets/images/large.png" />
     <entry file="file://$PROJECT_DIR$/../assets/images/small.png" />
-    <entry file="file://$PROJECT_DIR$/../assets/images/large.png" />
     <entry file="file://$PROJECT_DIR$/../assets/cap_apparent_temperature.svg" />
     <entry file="file://$PROJECT_DIR$/../assets/cap_measure_visibility.svg" />
     <entry file="file://$PROJECT_DIR$/../assets/cap_measure_uvindex.svg" />
     <entry file="file://$PROJECT_DIR$/../assets/cap_clouds.svg" />
-    <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/device.js" />
+    <entry file="file://$PROJECT_DIR$/../assets/images/large.png" />
+    <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/assets/images/small.png" />
+    <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/assets/images/large.png" />
+    <entry file="file://$PROJECT_DIR$/../assets/icon.svg" />
+    <entry file="file://$PROJECT_DIR$/../node_modules/string-format/index.js" />
     <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/pair/darksky_pair.html" />
-    <entry file="file://$PROJECT_DIR$/../README.md" />
-    <entry file="file://$PROJECT_DIR$/../app.json" />
+    <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/device.js" />
     <entry file="file://$PROJECT_DIR$/../drivers/darksky_current_weather/driver.js" />
-    <entry file="file://$PROJECT_DIR$/assets/images/large.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/../README.md" />
+    <entry file="file://$PROJECT_DIR$/../locales/de.json" />
+    <entry file="file://$PROJECT_DIR$/../locales/en.json" />
+    <entry file="file://$PROJECT_DIR$/../locales/nl.json" />
+    <entry file="file://$PROJECT_DIR$/../app.json" />
+    <entry file="file://$PROJECT_DIR$/app.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="600" column="6" selection-start-line="600" selection-start-column="6" selection-end-line="600" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/icon.svg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/driver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drivers/darksky_current_weather/device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

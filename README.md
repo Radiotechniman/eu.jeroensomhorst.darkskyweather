@@ -9,6 +9,7 @@ to not overload the server / key usage.
 
 # Changelog
 
+* 0.0.8 Fixed a critical bug that prevented the application from retrieving api data.
 * 0.0.7 Added extra validation on lat/long in settings and pairing. Fixed a bug in wind strength, gust strength. Its correctly converted to km/h
 * 0.0.6 Added conditions for custom capabilities. Fixed some translations and added German translations
 * 0.0.5 Changed the label for the highest / lowest day temperature to expected highest / lowest temperature

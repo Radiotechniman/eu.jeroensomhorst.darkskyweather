@@ -35,7 +35,6 @@ class DarkskyDriver extends Homey.Driver{
 
         this.retrievedDaily = -1;
 
-        this.capabilities = Homey.manifest.capabilities;
         this.triggerKeys = [];
         this.conditionKeys = [];
         if(Homey.manifest.hasOwnProperty('flow')){
@@ -116,12 +115,19 @@ class DarkskyDriver extends Homey.Driver{
     }
 
     async getWeather(key,lat,long){
+
+        console.log("Get weather ");
+        console.log(key);
+        console.log(lat);
+        console.log(long);
         let url = format(API_URL,key,lat,long);
         this.log(url);
 
         return new Promise((resolve,reject)=>{
             try{
-                https.get(url,(res)=>{
+
+               https.get(url,(res)=>{
+
                     if(res.statusCode === 200) {
                         let body = [];
                         res.on('data', (chunk) => {
@@ -139,8 +145,9 @@ class DarkskyDriver extends Homey.Driver{
                     }
                 }).on('error',(err)=>{
                     this.log(err);
-                    reject(null);
+                    reject(err);
                 });
+
             }catch(e){
                 reject(null);
             }
