@@ -13,6 +13,7 @@
     "nl": "Get weather info using Dark Sky",
     "de": "Get weather info using Dark Sky"
   },
+  "brandColor": "#30ABD4",
   "category": [
     "climate"
   ],
